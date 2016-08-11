@@ -1,14 +1,14 @@
 {
     "name"         : "node-red-contrib-fft",
     "version"      : "0.0.1",
-    "description"  : "transform an array via fft based on https://github.com/JensNockert/fft.js ",
+    "description"  : "transform an array via fft. Based on https://github.com/JensNockert/fft.js ",
     "dependencies": {
     	"fft" : "*"
     },
     "keywords": [ "node-red", "fft", "fourier" ],
     "repository": {
         "type": "git",
-        "url": "git://github.com/evantahler/nodePhidgets.git"
+        "url": "git://github.com/sbrennion/node-red-contrib-fft.git"
         },
     "homepage": "http://leanbi.ch/industrie-40",
     "node-red"     : {
