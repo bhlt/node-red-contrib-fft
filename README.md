@@ -5,18 +5,12 @@ Node to convert one or more values within an array, using fourier transformation
 ## example : 
 ### input
 ```json
-{
-    "payload":{
-      "data" :  
-        [  
-          {"accelerometer_x" : 1 , "accelerometer_y":2}, 
-          {"accelerometer_x" : 1 , "accelerometer_y":2}, 
-          {"accelerometer_x" : 1 , "accelerometer_y":2}, 
-          {"accelerometer_x" : 1 , "accelerometer_y":2}, 
-          {"accelerometer_x" : 1 , "accelerometer_y":2}, 
-          {"accelerometer_x" : 1 , "accelerometer_y":2} 
-        ]
-}
+{ "data" :  [  
+{"accelerometer_x" : 9 , "accelerometer_y":2}, 
+{"accelerometer_x" : 7 , "accelerometer_y":2}, 
+{"accelerometer_x" : 5 , "accelerometer_y":0}, 
+{"accelerometer_x" : 7 , "accelerometer_y":2}
+]}
 
 ```
 ### config
@@ -30,19 +24,21 @@ type : real
 ### result
 ```json
 { 
-  "topic": "", 
-  "payload": { 
-    "fft_accelerometer_x_0": 7, 
-    "fft_accelerometer_x_1": 0, 
-    "fft_accelerometer_x_2": -1.1102230246251565e-16,
-    "fft_accelerometer_x_3": 1.1102230246251565e-16, 
-    "fft_accelerometer_x_4": -2.498001805406602e-16, 
-    "fft_accelerometer_x_5": -1.1102230246251565e-16
-    //...
-  }
+  "payload" : 
+   { "fft_accelerometer_x_0": 28,
+     "fft_accelerometer_x_1": 4,
+     "fft_accelerometer_x_2": 0,
+     "fft_accelerometer_x_3": 4,
+     "fft_accelerometer_y_0": 6,
+     "fft_accelerometer_y_1": 2,
+     "fft_accelerometer_y_2": 2,
+     "fft_accelerometer_y_3": 2
+    } 
 }
 ```
 
 ## to do
 - add other output templates
 - support complex transformation
+
+[link](http://leanbi.ch/big-data/ "leanbi")
