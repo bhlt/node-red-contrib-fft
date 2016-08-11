@@ -20,6 +20,7 @@ Node to convert one or more values within an array, using fourier transformation
 
 ```
 ### config
+
 input : msg.payload.data
 prefix : fft_
 type : real
