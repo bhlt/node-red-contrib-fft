@@ -45,7 +45,6 @@ module.exports = function(RED) {
                 //transformation to get the same number of values in the output than in the input
                 for (o=0 ; o<(ftt_out.length/2) ; o++) {
                     ind=o*2
-                    node.log("key=" + key + "o=" + o)
                     msg.payload[key_out + "_" + o] = Math.sqrt(Math.pow(ftt_out[ind],2) + Math.pow(ftt_out[ind+1],2))
 
                 }
@@ -70,7 +69,7 @@ module.exports = function(RED) {
 
             out=fft.process(output,0,1,input,0,1, config.transformType)
             //node.log(JSON.stringify())
-            node.log("fft_in=" + input + "\n fft_out=" + JSON.stringify(output))
+            //node.log("fft_in=" + input + "\n fft_out=" + JSON.stringify(output))
             return output
 
         	
