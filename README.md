@@ -23,7 +23,7 @@ type : real
 
 ### result
 ```json
-{ topic: '',
+{ 
   payload: 
    { fft_accelerometer_x_0: 28,
      fft_accelerometer_x_1: 4,
@@ -32,7 +32,7 @@ type : real
      fft_accelerometer_y_0: 6,
      fft_accelerometer_y_1: 2,
      fft_accelerometer_y_2: 2,
-     fft_accelerometer_y_3: 2,
+     fft_accelerometer_y_3: 2
     } 
 }
 ```
