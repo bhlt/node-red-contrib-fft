@@ -23,21 +23,30 @@ module.exports = function(RED) {
         			value=input[row][key];
 
         			if (typeof toTransform[key]== "undefined"){
-        				toTransform[key]=[value];
+        				toTransform[key]=[];
         			}
             		toTransform[key].push(value)
             	}
         	}
 
-            msg.payload.data="deleted"
+            delete msg.payload.data
         	for (i=0 ; i < Object.keys(toTransform).length ; i++) {
                 key=Object.keys(toTransform)[i]
         		ftt_out=fft_transform(toTransform[key])
 
         		key_out=config.out_prefix + key
         		//flaten array to features
-                for (o=0 ; o<key_out.length ; o++) {
+        		/*
+                for (o=0 ; o<ftt_out.length ; o++) {
                     msg.payload[key_out + "_" + o] = ftt_out[o]
+                }
+                */
+
+                //transformation to get the same number of values in the output than in the input
+                for (o=0 ; o<(ftt_out.length/2) ; o++) {
+                    ind=o*2
+                    node.log("key=" + key + "o=" + o)
+                    msg.payload[key_out + "_" + o] = Math.sqrt(Math.pow(ftt_out[ind],2) + Math.pow(ftt_out[ind+1],2))
 
                 }
         	}
@@ -57,8 +66,11 @@ module.exports = function(RED) {
             //fft.process(output, outputOffset, outputStride, input, inputOffset, inputStride, type)
 
             /* Or the simplified interface, which just sets the offsets to 0, and the strides to 1 */
-            out=fft.simple(output, input, config.transformType)
-            //node.log("fft_in=" + input + "\n fft_out=" + JSON.stringify(output))
+            //out=fft.simple(output, input, config.transformType)
+
+            out=fft.process(output,0,1,input,0,1, config.transformType)
+            //node.log(JSON.stringify())
+            node.log("fft_in=" + input + "\n fft_out=" + JSON.stringify(output))
             return output
 
         	
