@@ -3,12 +3,10 @@
         category: 'function',
         color: '#a6bbcf',
         defaults: {
-        	input: {value:''},
+        	input: {value:'payload'},
             inputType: {value:'msg'},
-            ouput: {value:""},
-            outputType: {value:'msg'},
             transformType: {value:""},
-            suffix:{value:''},
+            out_prefix:{value:'fft_'},
         },
         inputs:1,
         outputs:1,
@@ -40,17 +38,13 @@
 <script type="text/x-red" data-template-name="fft">
     <!-- INPUT -->
     <div class="form-row">
-        <label for="node-input-input"><i class="fa fa-arrow-left"></i> Input from</label>
+        <label for="node-input-input"><i class="fa fa-arrow-left"></i>Input from</label>
         <input type="text" id="node-input-input" style="width: 70%;" placeholder="payload">
         <input type="hidden" id="node-input-inputType">
     </div>    
-	<div class="form-row">
-        <label for="node-input-regex"><i class="icon-tag"></i>Regex</label>
-        <input type="text" id="node-input-prefix" placeholder="x_*">
-    </div>
     <div class="form-row">
-        <label for="node-input-prefix"><i class="icon-tag"></i>prefix</label>
-        <input type="text" id="node-input-prefix" placeholder="fft_">
+        <label for="node-input-out_prefix"><i class="icon-tag"></i>Output field prefix</label>
+        <input type="text" id="node-input-out_prefix" placeholder="fft_">
     </div>
     <div class="form-row">
         <label for="node-input-transformType">Type</label>
@@ -58,11 +52,6 @@
             <option value="real">real</option>
             <option value="complex">complex</option>
         </select>
-    </div>
-    <div class="form-row">
-        <label for="node-input-output"><i class="fa fa-arrow-right"></i>Output</label>
-        <input type="text" id="node-input-output" style="width: 70%;" placeholder="payload">
-        <input type="hidden" id="node-input-outputType">
     </div>
 </script>
 
