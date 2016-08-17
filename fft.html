@@ -4,9 +4,10 @@
         color: '#a6bbcf',
         defaults: {
         	input: {value:'payload'},
+        	fields: {value: 'accelerometer_x,accelerometer_y,accelerometer_z'},
             inputType: {value:'msg'},
             transformType: {value:""},
-            out_prefix:{value:'fft_'},
+            out_prefix:{value:'fft_'}
         },
         inputs:1,
         outputs:1,
@@ -38,12 +39,15 @@
 <script type="text/x-red" data-template-name="fft">
     <!-- INPUT -->
     <div class="form-row">
-        <label for="node-input-input"><i class="fa fa-arrow-left"></i>Input from</label>
-        <input type="text" id="node-input-input" style="width: 70%;" placeholder="payload">
-        <input type="hidden" id="node-input-inputType">
-    </div>    
+        <label for="node-input-input"><i class="fa fa-arrow-left"></i>Input array</label>
+        <input type="text" id="node-input-input"  placeholder="">
+    </div>
     <div class="form-row">
-        <label for="node-input-out_prefix"><i class="icon-tag"></i>Output field prefix</label>
+        <label for="node-input-fields"><i class="icon-tag"></i>fields to transform</label>
+        <input type="text" id="node-input-fields"  placeholder="accelerometer_x,accelerometer_y,accelerometer_z">
+    </div>
+    <div class="form-row">
+        <label for="node-input-out_prefix"></i>Output field prefix</label>
         <input type="text" id="node-input-out_prefix" placeholder="fft_">
     </div>
     <div class="form-row">
@@ -56,5 +60,5 @@
 </script>
 
 <script type="text/x-red" data-help-array="fft">
-    <p>Get Data from the Phidgets Accelerometer</p>
+    <p>Transform series within an array via fft fast fourier transformation</p>
 </script>

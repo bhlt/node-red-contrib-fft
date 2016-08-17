@@ -1,19 +1,53 @@
 {
-    "name"         : "node-red-contrib-fft",
-    "version"      : "0.0.1",
-    "description"  : "transform an array via fft. Based on https://github.com/JensNockert/fft.js ",
-    "dependencies": {
-    	"fft" : "*"
-    },
-    "keywords": [ "node-red", "fft", "fourier" ],
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/sbrennion/node-red-contrib-fft.git"
-        },
-    "homepage": "http://leanbi.ch/industrie-40",
-    "node-red"     : {
-        "nodes": {
-            "node-fft": "node-red-contrib-fft/node-red-contrib-fft.js"
-        }
+  "name": "node-red-contrib-fft",
+  "version": "0.0.6",
+  "description": "transform an array via fft (fast fourier transformation), for vibration analysis...  ",
+  "dependencies": {
+    "fft": "*"
+  },
+  "keywords": [
+    "node-red",
+    "fft",
+    "fourier"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sbrennion/node-red-contrib-fft.git"
+  },
+  "homepage": "http://leanbi.ch/industrie-40",
+  "node-red": {
+    "nodes": {
+      "fft": "fft.js"
     }
+  },
+  "gitHead": "b10650ec29156e79ba00851b324b5b5a0a64b206",
+  "bugs": {
+    "url": "https://github.com/sbrennion/node-red-contrib-fft/issues"
+  },
+  "_id": "node-red-contrib-fft@0.0.4",
+  "scripts": {},
+  "_shasum": "2a42eb7d9812c69fe7f1656d1d219a421c8a0521",
+  "_from": "node-red-contrib-fft@0.0.4",
+  "_npmVersion": "3.5.2",
+  "_nodeVersion": "4.2.6",
+  "_npmUser": {
+    "name": "leanbi",
+    "email": "sebastien.brennion@leanbi.ch"
+  },
+  "dist": {
+    "shasum": "2a42eb7d9812c69fe7f1656d1d219a421c8a0521",
+    "tarball": "https://registry.npmjs.org/node-red-contrib-fft/-/node-red-contrib-fft-0.0.4.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "leanbi",
+      "email": "sebastien.brennion@leanbi.ch"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/node-red-contrib-fft-0.0.4.tgz_1471252028521_0.07743492373265326"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/node-red-contrib-fft/-/node-red-contrib-fft-0.0.4.tgz"
 }

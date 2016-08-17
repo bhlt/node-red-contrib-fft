@@ -1,7 +1,6 @@
 module.exports = function(RED) {
 
     function transformFFT(config) {
-    	var lib = require("ml-fft");
     	RED.nodes.createNode(this,config);
         var node = this;
         //this.status({fill:"red",shape:"dot",text:"not started"});
@@ -9,16 +8,16 @@ module.exports = function(RED) {
         
         this.on("input", function(msg){
             msgo=msg
-        	var keys=["accelerometer_x","accelerometer_y"]
+        	var keys=config.fields.split(",")
         	toTransform={}
-        	
+
         	input=eval("msg." +config.input)
 
 
         	for (row=0; row< input.length ; row++) {
 
         		for (col=0; col< keys.length ; col++) {
-        			
+
         			key=keys[col]
         			value=input[row][key];
 
@@ -51,11 +50,11 @@ module.exports = function(RED) {
         	}
 
         	node.send(msg)
-        	
-        	
+
+
         }
         )
-     
+
         function fft_transform(input){
         	output=[]
         	FFT=require("fft")
@@ -72,9 +71,9 @@ module.exports = function(RED) {
             //node.log("fft_in=" + input + "\n fft_out=" + JSON.stringify(output))
             return output
 
-        	
+
         }
- 
+
     }
     RED.nodes.registerType("fft",transformFFT);
 }
