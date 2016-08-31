@@ -4,9 +4,10 @@
         color: '#a6bbcf',
         defaults: {
         	input: {value:'payload'},
+        	singleValue: {value: 'false'},
         	fields: {value: 'accelerometer_x,accelerometer_y,accelerometer_z'},
             inputType: {value:'msg'},
-            transformType: {value:""},
+            transformType: {value:''},
             out_prefix:{value:'fft_'}
         },
         inputs:1,
@@ -41,6 +42,10 @@
     <div class="form-row">
         <label for="node-input-input"><i class="fa fa-arrow-left"></i>Input array</label>
         <input type="text" id="node-input-input"  placeholder="">
+    </div>
+        <div class="form-row">
+        <label for="node-input-singleValue"><i class="icon-tag"></i>array with single value</label>
+        <input type="checkbox" id="node-input-singleValue"  >
     </div>
     <div class="form-row">
         <label for="node-input-fields"><i class="icon-tag"></i>fields to transform</label>

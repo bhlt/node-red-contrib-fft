@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-fft",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "transform an array via fft (fast fourier transformation), for vibration analysis...  ",
   "dependencies": {
     "fft": "*"
