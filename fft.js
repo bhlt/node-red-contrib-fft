@@ -10,6 +10,9 @@ module.exports = function(RED) {
         singleValue=true
         preserve=false
         node.log("singleValue" + JSON.stringify(config,null,2))
+        if(config.hasOwnProperty('singleValue')) {
+            singleValue=config.singleValue
+        }
 
         this.on("input", function(msg){
             msgo=msg
